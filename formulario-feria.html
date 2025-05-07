@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incripcion</title>
+    <link rel="stylesheet" href="/style/style-feria.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1>Registrar nuevo evento</h1>
+    <p>Completa el formulario para registrar un nuevo evento de emprendimiento</p>
+    <div id="contenedor-formulario">
+        <form action="" id="formulario__feria">
+            <div class="form-inscripcion">
+                <input type="text" name="nombre-feria" id="nombre-feria" placeholder="Ingrese el nombre de la feria">
+            </div>
+            <div class="form-inscripcion">
+                <input type="text" name="lugar-feria" id="lugar-feria" placeholder="Ingrese el lugar">
+            </div>
+            <div class="form-inscripcion">
+                <h2>Inicio de la feria:</h2>
+                <input type="date" name="inicio-feria" id="inicio-feria" >
+            </div>
+            <div class="form-inscripcion">
+                <h2>Finalizacion de la feria:</h2>
+                <input type="date" name="final-feria" id="final-feria">
+            </div>
+            <button id="boton-feria" type="submit"></button>
+        </form>
+    </div>
+
+    <feria-list></feria-list>
+</body>
+</html>
