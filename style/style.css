@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+header a{
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 30px;
+    color: black;
+}
+
+header a:hover{
+    transition: ease-out 0.3s;
+    color: slateblue;
+}
+
+.title{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin: 30px 0;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+feria-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    position: fixed;
+    bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+
+}
