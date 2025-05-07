@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
    
-    let ferias = JSON.parse(localStorage.getItem('personas')) || [];
+    let ferias = JSON.parse(localStorage.getItem('ferias')) || [];
     console.log(ferias);
     
     class FeriaList extends HTMLElement {
@@ -16,15 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
     render() {
    
-    this.shadowRoot.innerHTML = '<h2>Lista de ferias:</h2>';
    
-    ferias.forEach(p => {
+    ferias.forEach((p, i) => {
     this.shadowRoot.innerHTML += `
-    <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
-    <p><strong>Nombre:</strong> ${p.nombre}</p>
-    <p><strong>Edad:</strong> ${p.lugar} años</p>
-    <p><strong>Correo:</strong> ${p.inicio}</p>
-    <p><strong>Teléfono:</strong> ${p.final}</p>
+    <style>
+        div{
+            padding: 20px;
+            border: 1px solid black;
+            justify-content: flex-start;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <div>
+        <p><strong>Nombre:</strong> ${p.nombre}</p>
+        <p><strong>Edad:</strong> ${p.lugar} </p>
+        <p> ${p.inicio} - ${p.final}</p>
+        
     </div>
     `;
     });
@@ -33,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
    
     customElements.define('feria-list', FeriaList);
     
-    const FeriaListElement = document.querySelector('feria-list');
     
     document.getElementById('formulario__feria').addEventListener('submit', function(e){
     e.preventDefault(); 
@@ -48,7 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ferias.push(nuevaFeria);
    
     localStorage.setItem('ferias', JSON.stringify(ferias));
-    this.render()
+    console.log(ferias);
+    
+
     this.reset();
     });
     }); 
+
